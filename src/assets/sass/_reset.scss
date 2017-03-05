@@ -1,34 +1,88 @@
-*, *:after, *:before {
+$font-size: 14px;
+$font-default: 'Open Sans', sans-serif;
+
+*,
+*:before,
+*:after {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
-/* remember to define focus styles! */
-:focus {
-	outline: 0;
+html {
+	font-size: $font-size;
+	font-weight: 400;
+	-webkit-text-size-adjust: 100%;
+ 	-ms-text-size-adjust: 100%;
+ 	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
 }
+
 body {
-	line-height: 1;
-	color: black;
-	background: white;
+	font-family: $font-default;
+	-webkit-font-smoothing: antialiased;
 }
-ol, ul {
+
+input:not([type="submit"]),
+textarea,
+p,
+h1, h2, h3, h4, h5,
+span {
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+   -webkit-touch-callout: auto;
+   user-select: auto;
+}
+
+input,
+input[type="range"] {
+	outline: none;
+
+	&:active, &:focus {
+		outline: none;
+	}
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul,
+li {
 	list-style: none;
 }
-/* tables still need 'cellspacing="0"' in the markup */
-table {
-	border-collapse: separate;
-	border-spacing: 0;
+
+a, a:hover, a:active, a:visited {
+	text-decoration: none;
+	cursor: pointer;
 }
-caption, th, td {
-	text-align: left;
-	font-weight: normal;
+
+
+a, button {
+	outline: none;
+	border: none;
+	cursor: pointer;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: "";
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
 }
-blockquote, q {
-	quotes: "" "";
-}
+
+p { font-size: 1rem; }
+h1 { font-size: 3rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.25rem;}
+h5 { font-size: 1rem; }
+h6 { font-size: 0.75rem; }

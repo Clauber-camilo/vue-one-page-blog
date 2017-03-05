@@ -1,7 +1,6 @@
 <template>
     <div id="app">
         <main-header></main-header>
-        <img src="./assets/images/logo.png">
         <router-view></router-view>
         <main-footer></main-footer>
     </div>
@@ -18,8 +17,8 @@
         },
         components: {
             MainHeader,
-            MainFooter,
-        },
+            MainFooter
+        }
     };
 
 </script>
@@ -34,6 +33,6 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
-        color: #2c3e50;
+        // color: #2c3e50;
     }
 </style>

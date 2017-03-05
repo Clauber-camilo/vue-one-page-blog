@@ -8,7 +8,7 @@
         name: 'Main-footer',
         data() {
             return {};
-        },
+        }
     };
 </script>
 <style lang="sass" scoped>
