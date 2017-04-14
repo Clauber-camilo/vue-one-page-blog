@@ -1,0 +1,73 @@
+// ----------------------------------------------------------------------
+
+  // Animated link that has a fade-in underline
+
+// ----------------------------------------------------------------------
+
+// example: @include animate-link($screenGreen, $gothamMedium, 14);
+
+@mixin animate-link($color, $font, $fontSize) {
+
+    font-family:$font;
+
+    @include single-transition(border, 0.2s, ease-in-out, 0s);
+    text-decoration:none;
+
+    color: $color;
+    border-bottom:1px solid transparent;
+
+    @include rem("font-size", $fontSize);
+
+    &:focus,
+    &:hover {
+        border-color: $color;
+    }
+}
+
+// ----------------------------------------------------------------------
+
+  // Transitions
+
+// ----------------------------------------------------------------------
+
+// example: @include single-transition(background, 1s, ease-in-out, 0);
+
+@mixin single-transition($property, $duration, $timing-function, $delay) {
+    transition: $property $duration $timing-function $delay;
+}
+
+// example: @include double-transition(background, 1s, ease-in-out, 0, opacity, .1s, ease-in-out, 0);
+
+@mixin double-transition($property1, $duration1, $timing-function1, $delay1, $property2, $duration2, $timing-function2, $delay2) {
+    transition: $property1 $duration1 $timing-function1 $delay1, $property2 $duration2 $timing-function2 $delay2;
+}
+
+// ----------------------------------------------------------------------
+
+  // REM Units with PX fallback
+
+// ----------------------------------------------------------------------
+
+ // example: @include rem("margin", 10, 5, 10, 5);
+ // example: @include rem("font-size", 14);
+
+@mixin rem($property, $values...) {
+    $n: length($values);
+    $i: 1;
+
+    $remlist: ();
+
+    @while $i <= $n {
+        $itemVal: (nth($values, $i));
+        @if $itemVal != "auto"{
+        //$remlist: append($remlist, ($itemVal / 10) + rem); // Use this if you've set HTML font size value to 62.5%
+        $remlist: append($remlist, ($itemVal / 16) + rem);
+        } @else {
+        $remlist: append($remlist, auto);
+        }
+
+        $i: $i + 1;
+    }
+
+    #{$property}: $remlist;
+}

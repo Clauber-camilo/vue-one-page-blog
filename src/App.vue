@@ -25,11 +25,13 @@
 
 <style lang="scss">
 
-    @import './assets/sass/reset';
-    @import './assets/sass/config/vars';
+    // @import './assets/sass/reset';
+    // @import './assets/sass/config/vars';
+
+    @import '~_sass/main';
 
     #app {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        font-family: $font-default;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;

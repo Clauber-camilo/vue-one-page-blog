@@ -19,26 +19,29 @@
 </script>
 <style lang="scss" scoped>
 
-    @import '~_assets/sass/config/vars';
+    @import '~_sass/config/vars';
+    @import '~_sass/config/mixins';
 
     .header {
         height: 60px;
         width: 100%;
         padding: 0 30px;
 
-        border-bottom: 3px solid $color-rosewood;
+        border-bottom: 3px solid $color-blue--medium;
 
-        background-color: $color-red--sub;
+        background-color: $color-blue--dark;
 
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        &__logo {
-            width: 50px;
-            height: 50px;
+        position: fixed;
 
-            background-image: url("~_assets/images/logo_blog2.png");
+        &__logo {
+            width: 160px;
+            height: 45px;
+
+            background-image: url("~_assets/images/logo_blog2_text.png");
             background-size: cover;
             background-position: center center;
         }
@@ -54,8 +57,13 @@
                 border-right: 1px solid $color-white--base;
                 padding: 0 10px;
 
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
                 a {
-                    color: $color-white--base;
+                    @include animate-link($color-white--base, $font-default, 14);
+                    // color: $color-white--base;
                 }
 
             }
