@@ -44,12 +44,12 @@
 
 // ----------------------------------------------------------------------
 
-  // REM Units with PX fallback
+// REM Units with PX fallback
 
 // ----------------------------------------------------------------------
 
- // example: @include rem("margin", 10, 5, 10, 5);
- // example: @include rem("font-size", 14);
+// example: @include rem("margin", 10, 5, 10, 5);
+// example: @include rem("font-size", 14);
 
 @mixin rem($property, $values...) {
     $n: length($values);
@@ -70,4 +70,29 @@
     }
 
     #{$property}: $remlist;
+}
+
+// ----------------------------------------------------------------------
+
+// Elipses
+
+// ----------------------------------------------------------------------
+
+// example: @include ellipsis(1, 1);
+
+@mixin ellipsis ($line: 1, $lineHeight: 1) {
+	display: block; /* Fallback for non-webkit */
+    display: -webkit-box;
+    height: 1em * $lineHeight * $line; /* Fallback for non-webkit */
+    margin: 0 auto;
+    line-height: $lineHeight;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+$font-size: 14px;
+@function rem($pixels, $base: $font-size) {
+	@return ($pixels / $base) * 1rem;
 }

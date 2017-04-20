@@ -25,8 +25,8 @@ module.exports = {
       '@': resolve('src'),
       '_assets': path.join(__dirname, '..', 'src', 'assets'),
       '_sass': path.join(__dirname, '..', 'src', 'assets', 'sass'),
-      '_components': path.join(__dirname, '..', 'src', 'components')
-
+      '_components': path.join(__dirname, '..', 'src', 'components'),
+      '_modules': path.join(__dirname, '..', 'src', 'components', 'modules')
     }
   },
   module: {
